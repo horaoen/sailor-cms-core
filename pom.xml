@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <groupId>com.horaoen</groupId>
+    <artifactId>sailor-cms-core</artifactId>
+    <version>1.0.0</version>
+
+    <modelVersion>4.0.0</modelVersion>
+    <name>sailor-cms-core</name>
+    
+    <modules>
+        <module>sailor-cms-spring-boot-core</module>
+        <module>sailor-cms-spring-boot-autoconfigure</module>
+        <module>sailor-cms-spring-boot-starter</module>
+    </modules>
+    
+    <packaging>pom</packaging>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring.version>2.5.14</spring.version>
+        <sailor.version>1.0.0</sailor.version>
+        <jhash.version>2.2.0</jhash.version>
+        <jwt.version>3.8.0</jwt.version>
+        <lombok.version>1.18.6</lombok.version>
+    </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.horaoen</groupId>
+                <artifactId>sailor-cms-spring-boot-starter</artifactId>
+                <version>${sailor.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.horaoen</groupId>
+                <artifactId>sailor-cms-spring-boot-autoconfigure</artifactId>
+                <version>${sailor.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.horaoen</groupId>
+                <artifactId>sailor-cms-spring-boot-core</artifactId>
+                <version>${sailor.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.amdelamar</groupId>
+                <artifactId>jhash</artifactId>
+                <version>${jhash.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <developers>
+        <developer>
+            <name>horaoen</name>
+            <email>horaoen@gamil.com</email>
+        </developer>
+    </developers>
+    
+</project>
