@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.horaoen</groupId>
         <version>1.0.0</version>
-        <artifactId>sailor-cms</artifactId>
+        <artifactId>sailor-cms-core</artifactId>
     </parent>
     
     <modelVersion>4.0.0</modelVersion>

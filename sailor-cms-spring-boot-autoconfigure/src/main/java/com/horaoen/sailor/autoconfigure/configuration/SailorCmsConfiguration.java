@@ -1,5 +1,6 @@
 package com.horaoen.sailor.autoconfigure.configuration;
 
+import com.horaoen.sailor.autoconfigure.interceptor.AuthorizeInterceptor;
 import com.horaoen.sailor.core.token.DoubleJWT;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -34,5 +35,11 @@ public class SailorCmsConfiguration {
             refreshExpire = 60 * 60 * 24 * 30L;
         }
         return new DoubleJWT(secret, accessExpire, refreshExpire);
+    }
+
+    @Bean
+    public AuthorizeInterceptor authInterceptor() {
+        String[] excludeMethods = properties.getExcludeMethods();
+        return new AuthorizeInterceptor(excludeMethods);
     }
 }
